@@ -1,0 +1,4 @@
+dataset_name: demo-dataset
+version: v1
+owner: seh
+description: Demo dataset for the skill evaluation harness

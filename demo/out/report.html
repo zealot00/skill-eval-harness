@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEH Report</title>
+  <style>
+    :root {
+      --bg: #f6f3ea;
+      --panel: #fffdf7;
+      --ink: #1c1a17;
+      --muted: #6e675d;
+      --border: #d7cfbe;
+      --good: #226c3a;
+      --bad: #9c2f2f;
+      --accent: #b96d1f;
+    }
+    body {
+      margin: 0;
+      font-family: Georgia, "Iowan Old Style", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, #fff7df 0, transparent 28%),
+        linear-gradient(180deg, #f0eadc 0%, var(--bg) 100%);
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .hero {
+      margin-bottom: 24px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, #fffef9, var(--panel));
+      box-shadow: 0 14px 40px rgba(45, 36, 18, 0.08);
+    }
+    h1, h2 { margin: 0 0 12px; }
+    .meta, .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .card {
+      padding: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.72);
+    }
+    .label {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .value {
+      font-size: 22px;
+      font-weight: 700;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--panel);
+      border: 1px solid var(--border);
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .ok { color: var(--good); font-weight: 700; }
+    .fail { color: var(--bad); font-weight: 700; }
+    .muted { color: var(--muted); }
+    .tools, .steps {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .section { margin-top: 24px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Skill Evaluation Report</h1>
+      <div class="ok">
+        PASS
+      </div>
+      <div class="meta">
+        <div class="card"><span class="label">Model</span><span class="value"></span></div>
+        <div class="card"><span class="label">Git Commit</span><span class="value"></span></div>
+        <div class="card"><span class="label">Timestamp</span><span class="value"></span></div>
+        <div class="card"><span class="label">Seed</span><span class="value">0</span></div>
+      </div>
+      
+      <div class="metrics">
+        <div class="card"><span class="label">Score</span><span class="value">0.800000</span></div>
+        <div class="card"><span class="label">Success Rate</span><span class="value">1.000000</span></div>
+        <div class="card"><span class="label">Avg Tokens</span><span class="value">1.000000</span></div>
+        <div class="card"><span class="label">P95 Latency</span><span class="value">0 ms</span></div>
+        <div class="card"><span class="label">Cost</span><span class="value">$0.000000</span></div>
+      </div>
+      
+    </section>
+
+    <section class="section">
+      <h2>Case Results</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Status</th>
+            <th>Classification</th>
+            <th>Latency</th>
+            <th>Tokens</th>
+            <th>Error</th>
+            <th>Steps</th>
+            <th>Tool Calls</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>0</td>
+            <td class="ok">ok</td>
+            <td><span class="muted">none</span></td>
+            <td>0 ms</td>
+            <td>1</td>
+            <td><span class="muted">none</span></td>
+            <td>
+              <ul class="steps">
+                <li class="muted">none</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="tools">
+                <li class="muted">none</li>
+              </ul>
+            </td>
+          </tr>
+          
+          <tr>
+            <td>1</td>
+            <td class="ok">ok</td>
+            <td><span class="muted">none</span></td>
+            <td>0 ms</td>
+            <td>1</td>
+            <td><span class="muted">none</span></td>
+            <td>
+              <ul class="steps">
+                <li class="muted">none</li>
+              </ul>
+            </td>
+            <td>
+              <ul class="tools">
+                <li class="muted">none</li>
+              </ul>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+min_score: 0
+min_success_rate: 1
+max_p95_latency: 100000
+max_avg_tokens: 10

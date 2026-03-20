@@ -1,0 +1,60 @@
+{
+  "success": true,
+  "latency_ms": 0,
+  "token_usage": 2,
+  "output": {
+    "case_count": 2,
+    "skill": "demo-skill"
+  },
+  "error": "",
+  "results": [
+    {
+      "success": true,
+      "latency_ms": 0,
+      "token_usage": 1,
+      "output": {
+        "input": {
+          "prompt": "alpha"
+        },
+        "skill": "demo-skill"
+      },
+      "error": "",
+      "classification": "",
+      "trajectory": {
+        "steps": null,
+        "tool_calls": null,
+        "reasoning_tokens_estimate": 0
+      }
+    },
+    {
+      "success": true,
+      "latency_ms": 0,
+      "token_usage": 1,
+      "output": {
+        "input": {
+          "prompt": "beta"
+        },
+        "skill": "demo-skill"
+      },
+      "error": "",
+      "classification": "",
+      "trajectory": {
+        "steps": null,
+        "tool_calls": null,
+        "reasoning_tokens_estimate": 0
+      }
+    }
+  ],
+  "metrics": {
+    "success_rate": 1,
+    "avg_tokens": 1,
+    "p95_latency": 0,
+    "cost_factor": 0.5,
+    "classification_factor": 1,
+    "cost_usd": 0.000004,
+    "score": 0.85
+  },
+  "git_commit": "",
+  "model_name": "",
+  "timestamp": ""
+}

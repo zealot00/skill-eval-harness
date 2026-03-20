@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="980" viewBox="0 0 1280 980">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#2b2b2b"/>
+    </marker>
+    <style>
+      .title { font: 700 30px "PingFang SC", "Microsoft YaHei", Arial, sans-serif; fill: #1f1f1f; }
+      .label { font: 600 22px "PingFang SC", "Microsoft YaHei", Arial, sans-serif; fill: #1f1f1f; }
+      .small { font: 500 18px "PingFang SC", "Microsoft YaHei", Arial, sans-serif; fill: #333; }
+      .box { stroke: #2b2b2b; stroke-width: 2; rx: 18; ry: 18; }
+      .arrow { stroke: #2b2b2b; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1280" height="980" fill="#fcfbf7"/>
+  <text x="640" y="54" text-anchor="middle" class="title">SEH Architecture / 系统架构图</text>
+
+  <rect x="440" y="100" width="400" height="92" class="box" fill="#ffd43b"/>
+  <text x="640" y="138" text-anchor="middle" class="label">CLI Layer</text>
+  <text x="640" y="168" text-anchor="middle" class="small">cmd/root.go -&gt; seh commands</text>
+
+  <rect x="80" y="300" width="310" height="180" class="box" fill="#a5d8ff"/>
+  <text x="235" y="338" text-anchor="middle" class="label">Dataset Layer</text>
+  <text x="235" y="372" text-anchor="middle" class="small">internal/dataset</text>
+  <text x="235" y="404" text-anchor="middle" class="small">LoadCases / LoadManifest</text>
+  <text x="235" y="434" text-anchor="middle" class="small">FilterByTag / FilterBySample</text>
+  <text x="235" y="464" text-anchor="middle" class="small">ComputeDatasetHash</text>
+
+  <rect x="430" y="270" width="420" height="240" class="box" fill="#b2f2bb"/>
+  <text x="640" y="308" text-anchor="middle" class="label">Runner Layer</text>
+  <text x="640" y="342" text-anchor="middle" class="small">internal/runner</text>
+  <text x="640" y="374" text-anchor="middle" class="small">SkillRuntime / RunCases</text>
+  <text x="640" y="404" text-anchor="middle" class="small">worker pool / timeout / retry</text>
+  <text x="640" y="434" text-anchor="middle" class="small">metrics / score / drift / matrix</text>
+  <text x="640" y="464" text-anchor="middle" class="small">history / report / frontier / simulate</text>
+
+  <rect x="900" y="300" width="280" height="180" class="box" fill="#ffc9c9"/>
+  <text x="1040" y="338" text-anchor="middle" class="label">Policy Layer</text>
+  <text x="1040" y="372" text-anchor="middle" class="small">internal/policy</text>
+  <text x="1040" y="404" text-anchor="middle" class="small">Load + Evaluate</text>
+  <text x="1040" y="434" text-anchor="middle" class="small">min_score / latency / tokens</text>
+
+  <rect x="450" y="590" width="380" height="110" class="box" fill="#ffe8cc"/>
+  <text x="640" y="628" text-anchor="middle" class="label">Runtime Registry</text>
+  <text x="640" y="660" text-anchor="middle" class="small">ResolveRuntime / RegisterRuntime</text>
+  <text x="640" y="690" text-anchor="middle" class="small">demo-skill / custom runtimes</text>
+
+  <rect x="70" y="780" width="330" height="120" class="box" fill="#d0bfff"/>
+  <text x="235" y="818" text-anchor="middle" class="label">History Store</text>
+  <text x="235" y="852" text-anchor="middle" class="small">.history/ / PersistRun / LoadRun</text>
+  <text x="235" y="882" text-anchor="middle" class="small">IngestRun / baseline pointer</text>
+
+  <rect x="455" y="780" width="370" height="120" class="box" fill="#a5d8ff"/>
+  <text x="640" y="818" text-anchor="middle" class="label">Reports and Artifacts</text>
+  <text x="640" y="852" text-anchor="middle" class="small">run.json / score.json / matrix.json</text>
+  <text x="640" y="882" text-anchor="middle" class="small">report.html / drift.json / frontier.json</text>
+
+  <rect x="880" y="760" width="330" height="150" class="box" fill="#b2f2bb"/>
+  <text x="1045" y="798" text-anchor="middle" class="label">Analytics Modules</text>
+  <text x="1045" y="832" text-anchor="middle" class="small">compare / drift / frontier</text>
+  <text x="1045" y="862" text-anchor="middle" class="small">leaderboard / simulate</text>
+  <text x="1045" y="892" text-anchor="middle" class="small">stability variance / failure clusters</text>
+
+  <path d="M540 192 L320 300" class="arrow"/>
+  <path d="M640 192 L640 270" class="arrow"/>
+  <path d="M740 192 L960 300" class="arrow"/>
+  <path d="M640 510 L640 590" class="arrow"/>
+  <path d="M500 510 L290 780" class="arrow"/>
+  <path d="M640 510 L640 780" class="arrow"/>
+  <path d="M900 390 L850 390" class="arrow"/>
+  <path d="M400 840 L880 840" class="arrow"/>
+</svg>

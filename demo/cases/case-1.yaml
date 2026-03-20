@@ -1,0 +1,8 @@
+case_id: case-1
+skill: demo-skill
+input:
+  prompt: alpha
+expected:
+  status: ok
+tags:
+  - demo

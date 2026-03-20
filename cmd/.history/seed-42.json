@@ -1,0 +1,53 @@
+{
+  "success": true,
+  "latency_ms": 0,
+  "token_usage": 1,
+  "output": {
+    "case_count": 1,
+    "skill": "demo-skill"
+  },
+  "error": "",
+  "results": [
+    {
+      "success": true,
+      "latency_ms": 0,
+      "token_usage": 1,
+      "output": {
+        "input": {
+          "prompt": "alpha"
+        },
+        "skill": "demo-skill"
+      },
+      "error": "",
+      "classification": "",
+      "trajectory": {
+        "steps": [
+          "load_input",
+          "execute_demo_runtime",
+          "produce_output"
+        ],
+        "tool_calls": [
+          "demo-runtime"
+        ],
+        "reasoning_tokens_estimate": 16
+      }
+    }
+  ],
+  "metrics": {
+    "success_rate": 1,
+    "avg_tokens": 1,
+    "p95_latency": 0,
+    "cost_factor": 0.5,
+    "classification_factor": 1,
+    "cost_usd": 0.000002,
+    "stability_variance": 0,
+    "score": 0.85
+  },
+  "git_commit": "unknown",
+  "model_name": "demo-skill",
+  "timestamp": "1970-01-01T00:00:42Z",
+  "dataset_version": "v1",
+  "dataset_hash": "864fb29619a5c5cecc55e0ff960e1957fd1e1a9e7583d836cc99260f2b0520d8",
+  "run_id": "seed-42",
+  "seed": 42
+}
