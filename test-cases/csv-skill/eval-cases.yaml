@@ -1,0 +1,152 @@
+case_id: csv-eval-001
+skill: csv-documentation-generator
+input:
+  doc_type: vp
+  project: "AI评测项目"
+  system: "EDC v1.0"
+  category: 4
+  bilingual: true
+  language: zh
+  output: "/tmp/csv-eval/001"
+expected:
+  status: ok
+tags:
+  - happy-path
+  - vp
+  - category-4
+
+---
+
+case_id: csv-eval-002
+skill: csv-documentation-generator
+input:
+  doc_type: urs
+  project: "CTMS临床系统"
+  system: "CTMS v2.0"
+  category: 4
+  bilingual: true
+  language: zh
+  output: "/tmp/csv-eval/002"
+expected:
+  status: ok
+tags:
+  - happy-path
+  - urs
+  - category-4
+
+---
+
+case_id: csv-eval-003
+skill: csv-documentation-generator
+input:
+  doc_type: ra
+  project: "LIMS实验室"
+  system: "LIMS v3.0"
+  category: 4
+  bilingual: true
+  language: zh
+  output: "/tmp/csv-eval/003"
+expected:
+  status: ok
+tags:
+  - happy-path
+  - ra
+  - risk-assessment
+  - category-4
+
+---
+
+case_id: csv-eval-004
+skill: csv-documentation-generator
+input:
+  doc_type: urs
+  project: "ClinicalEDC"
+  system: "EDC v2.1"
+  category: 4
+  bilingual: false
+  language: en
+  output: "/tmp/csv-eval/004"
+expected:
+  status: ok
+tags:
+  - happy-path
+  - urs
+  - english-only
+
+---
+
+case_id: csv-eval-005
+skill: csv-documentation-generator
+input:
+  doc_type: rtm
+  project: "MES系统"
+  system: "MES v4.0"
+  category: 4
+  bilingual: true
+  language: zh
+  output: "/tmp/csv-eval/005"
+expected:
+  status: ok
+tags:
+  - happy-path
+  - rtm
+  - excel
+
+---
+
+case_id: csv-eval-006
+skill: csv-documentation-generator
+input:
+  doc_type: vp
+  project: "定制ERP"
+  system: "CustomERP v1.0"
+  category: 5
+  bilingual: true
+  language: zh
+  output: "/tmp/csv-eval/006"
+expected:
+  status: ok
+tags:
+  - happy-path
+  - vp
+  - category-5
+  - custom-system
+
+---
+
+case_id: csv-eval-007
+skill: csv-documentation-generator
+input:
+  doc_type: urs
+  project: "SCADA监控"
+  system: "SCADA v2.1"
+  category: 3
+  bilingual: true
+  language: zh
+  output: "/tmp/csv-eval/007"
+expected:
+  status: ok
+tags:
+  - happy-path
+  - urs
+  - category-3
+  - simplified
+
+---
+
+case_id: csv-eval-008
+skill: csv-documentation-generator
+input:
+  doc_type: fs
+  project: "质量管理系统"
+  system: "QMS v1.5"
+  category: 4
+  bilingual: true
+  language: zh
+  output: "/tmp/csv-eval/008"
+expected:
+  status: ok
+tags:
+  - happy-path
+  - fs
+  - category-4

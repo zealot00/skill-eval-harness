@@ -1,0 +1,76 @@
+{
+  "success": true,
+  "latency_ms": 0,
+  "token_usage": 2,
+  "output": {
+    "case_count": 2,
+    "skill": "demo-skill"
+  },
+  "error": "",
+  "results": [
+    {
+      "success": true,
+      "latency_ms": 0,
+      "token_usage": 1,
+      "output": {
+        "input": {
+          "prompt": "alpha"
+        },
+        "skill": "demo-skill"
+      },
+      "error": "",
+      "classification": "",
+      "trajectory": {
+        "steps": [
+          "load_input",
+          "execute_demo_runtime",
+          "produce_output"
+        ],
+        "tool_calls": [
+          "demo-runtime"
+        ],
+        "reasoning_tokens_estimate": 16
+      }
+    },
+    {
+      "success": true,
+      "latency_ms": 0,
+      "token_usage": 1,
+      "output": {
+        "input": {
+          "prompt": "beta"
+        },
+        "skill": "demo-skill"
+      },
+      "error": "",
+      "classification": "",
+      "trajectory": {
+        "steps": [
+          "load_input",
+          "execute_demo_runtime",
+          "produce_output"
+        ],
+        "tool_calls": [
+          "demo-runtime"
+        ],
+        "reasoning_tokens_estimate": 16
+      }
+    }
+  ],
+  "metrics": {
+    "success_rate": 1,
+    "avg_tokens": 1,
+    "p95_latency": 0,
+    "cost_factor": 0.5,
+    "classification_factor": 1,
+    "cost_usd": 0.000004,
+    "stability_variance": 0,
+    "score": 0.85
+  },
+  "git_commit": "9b578ac",
+  "model_name": "demo-skill",
+  "timestamp": "2026-03-24T07:32:01Z",
+  "dataset_version": "v1",
+  "dataset_hash": "91ec3750bd930a8adbdd52c3fd1957e7815a1d0b9443ad9a1b5d355b2fb4b776",
+  "run_id": "20260324T073201Z"
+}

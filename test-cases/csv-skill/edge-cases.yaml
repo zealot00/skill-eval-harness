@@ -1,0 +1,141 @@
+case_id: csv-edge-001
+skill: csv-documentation-generator
+input:
+  docType: vp
+  system: "EDC v1.0"
+  category: 4
+  output: "./test_output/csv-edge-001"
+expected:
+  status: ok
+tags:
+  - edge-case
+  - default-value
+
+---
+
+case_id: csv-edge-002
+skill: csv-documentation-generator
+input:
+  docType: vp
+  project: "Test Project"
+  system: "EDC v1.0"
+  category: 6
+  output: "./test_output/csv-edge-002"
+expected:
+  status: error
+  error_message: "invalid choice"
+tags:
+  - edge-case
+  - validation
+  - error-handling
+
+---
+
+case_id: csv-edge-003
+skill: csv-documentation-generator
+input:
+  docType: urs
+  project: "临床试验管理系统_中文项目名称_简体中文"
+  system: "CTMS v2.0"
+  category: 4
+  bilingual: true
+  language: zh
+  output: "./test_output/csv-edge-003"
+expected:
+  status: ok
+tags:
+  - edge-case
+  - unicode
+  - chinese
+
+---
+
+case_id: csv-edge-004
+skill: csv-documentation-generator
+input:
+  docType: vp
+  project: "这是一个非常长的项目名称用于测试边界条件最大长度限制是否合理会不会导致文件路径问题AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+  system: "系统名称版本号_v1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0"
+  category: 3
+  output: "./test_output/csv-edge-004"
+expected:
+  status: ok
+tags:
+  - edge-case
+  - boundary
+  - long-name
+
+---
+
+case_id: csv-edge-005
+skill: csv-documentation-generator
+input:
+  docType: urs
+  project: "TestProject"
+  system: "LIMS v3.0"
+  category: 4
+  output: "./test_output/nonexistent_parent/csv-edge-005/deeply/nested/path"
+expected:
+  status: ok
+tags:
+  - edge-case
+  - directory-creation
+  - path-handling
+
+---
+
+case_id: csv-edge-006
+skill: csv-documentation-generator
+input:
+  docType: vp
+  project: "InfrastructureProject"
+  system: "OperatingSystem_v12"
+  category: 1
+  bilingual: true
+  language: zh
+  output: "./test_output/csv-edge-006"
+expected:
+  status: ok
+tags:
+  - edge-case
+  - gamp-category-1
+  - infrastructure
+
+---
+
+case_id: csv-edge-007
+skill: csv-documentation-generator
+input:
+  docType: urs
+  project: "VerboseTest"
+  system: "TestSystem v1.0"
+  category: 4
+  bilingual: true
+  language: en
+  verbose: true
+  output: "./test_output/csv-edge-007"
+expected:
+  status: ok
+tags:
+  - edge-case
+  - verbose
+  - output-mode
+
+---
+
+case_id: csv-edge-008
+skill: csv-documentation-generator
+input:
+  docType: fs
+  project: "MixedLanguageProject"
+  system: "System v2.0"
+  category: 5
+  bilingual: false
+  language: en
+  output: "./test_output/csv-edge-008"
+expected:
+  status: ok
+tags:
+  - edge-case
+  - bilingual
+  - language-mode

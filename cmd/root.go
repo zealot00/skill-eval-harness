@@ -56,6 +56,7 @@ func newRunCmd() *cobra.Command {
 	var sample float64
 	var seed int64
 	var strict bool
+	var skillPath string
 
 	runCmd := &cobra.Command{
 		Use:   "run",
@@ -74,6 +75,17 @@ func newRunCmd() *cobra.Command {
 			manifest, err := dataset.LoadManifest(casesDir)
 			if err != nil {
 				return fmt.Errorf("load manifest: %w", err)
+			}
+
+			if skillPath != "" {
+				cfg, err := runner.LoadRuntimeConfig(skillPath)
+				if err == nil {
+					if err := runner.RegisterGenericRuntime(skillPath, cfg); err != nil {
+						return fmt.Errorf("register generic runtime: %w", err)
+					}
+				} else {
+					runner.RegisterPythonRuntime(skill, skillPath)
+				}
 			}
 			datasetHash, err := dataset.ComputeDatasetHash(casesDir)
 			if err != nil {
@@ -125,6 +137,7 @@ func newRunCmd() *cobra.Command {
 	runCmd.Flags().Float64Var(&sample, "sample", 0, "Random sample ratio of cases to run, for example 0.2")
 	runCmd.Flags().Int64Var(&seed, "seed", 0, "Deterministic replay seed")
 	runCmd.Flags().BoolVar(&strict, "strict", false, "Exit with status 1 if any case fails")
+	runCmd.Flags().StringVar(&skillPath, "skill-path", "", "Path to Python skill directory (for Python-based skills)")
 
 	mustMarkFlagRequired(runCmd, "skill")
 	mustMarkFlagRequired(runCmd, "cases")

@@ -1,0 +1,76 @@
+{
+  "success": true,
+  "latency_ms": 908,
+  "token_usage": 70,
+  "output": {
+    "case_count": 2,
+    "skill": "csv-documentation-generator"
+  },
+  "error": "",
+  "results": [
+    {
+      "success": true,
+      "latency_ms": 469,
+      "token_usage": 34,
+      "output": {
+        "generated_files": [
+          "/tmp/csv-eval/001/VP_AI评测项目.docx"
+        ],
+        "stdout": "\n============================================================\nGAMP 5 (Second Edition) Category Selection / GAMP 5 分类选择\n============================================================\n\nPlease select the GAMP category for your system:\n请为您的系统选择 GAMP 分类:\n\n  [1] Infrastructure Software / 基础设施软件\n       Examples / 示例: Operating systems, databases, middleware / 操作系统、数据库、中间件\n       Approach / 方法: Limited verification / 有限验证\n\n  [2] Firmware / 固件\n       Examples / 示例: Firmware in industrial controllers / 工业控制器中的固件\n       Approach / 方法: Simplified approach / 简化方法\n\n  [3] Commercial Off-The-Shelf (COTS) - Non-configured / 商用现货软件 (不可配置)\n       Examples / 示例: Standard software used as-is, no configuration / 直接使用的标准软件，无配置\n       Approach / 方法: Risk-based verification / 基于风险的验证\n\n  [4] Configured COTS / 配置型 COTS 软件\n       Examples / 示例: EDC, CTMS, LIMS, MES configured for specific use / 为特定用途配置的 EDC、CTMS、LIMS、MES\n       Approach / 方法: Risk-based verification with focus on configuration / 重点关注配置的基于风险验证\n\n  [5] Custom / Critical Application / 定制/关键应用\n       Examples / 示例: Custom-built systems, critical systems with patient impact / 定制开发系统、影响患者的关键系统\n       Approach / 方法: Full lifecycle validation / 完整生命周期验证\n\nEnter category number (1-5) / 输入分类编号 (1-5): \nUsing default category 4 / 使用默认分类 4\nCSV Documentation Generator\n==================================================\nGenerated: /tmp/csv-eval/001/VP_AI评测项目.docx\n\nDone! Files saved to: /tmp/csv-eval/001\n"
+      },
+      "error": "",
+      "classification": "",
+      "trajectory": {
+        "steps": [
+          "python_runtime",
+          "execute_script",
+          "parse_output"
+        ],
+        "tool_calls": [
+          "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3"
+        ],
+        "reasoning_tokens_estimate": 0
+      }
+    },
+    {
+      "success": true,
+      "latency_ms": 439,
+      "token_usage": 36,
+      "output": {
+        "generated_files": [
+          "test_output/vp_001/VP_临床试验系统.docx"
+        ],
+        "stdout": "\n============================================================\nGAMP 5 (Second Edition) Category Selection / GAMP 5 分类选择\n============================================================\n\nPlease select the GAMP category for your system:\n请为您的系统选择 GAMP 分类:\n\n  [1] Infrastructure Software / 基础设施软件\n       Examples / 示例: Operating systems, databases, middleware / 操作系统、数据库、中间件\n       Approach / 方法: Limited verification / 有限验证\n\n  [2] Firmware / 固件\n       Examples / 示例: Firmware in industrial controllers / 工业控制器中的固件\n       Approach / 方法: Simplified approach / 简化方法\n\n  [3] Commercial Off-The-Shelf (COTS) - Non-configured / 商用现货软件 (不可配置)\n       Examples / 示例: Standard software used as-is, no configuration / 直接使用的标准软件，无配置\n       Approach / 方法: Risk-based verification / 基于风险的验证\n\n  [4] Configured COTS / 配置型 COTS 软件\n       Examples / 示例: EDC, CTMS, LIMS, MES configured for specific use / 为特定用途配置的 EDC、CTMS、LIMS、MES\n       Approach / 方法: Risk-based verification with focus on configuration / 重点关注配置的基于风险验证\n\n  [5] Custom / Critical Application / 定制/关键应用\n       Examples / 示例: Custom-built systems, critical systems with patient impact / 定制开发系统、影响患者的关键系统\n       Approach / 方法: Full lifecycle validation / 完整生命周期验证\n\nEnter category number (1-5) / 输入分类编号 (1-5): \nUsing default category 4 / 使用默认分类 4\nCSV Documentation Generator\n==================================================\nGenerated: test_output/vp_001/VP_临床试验系统.docx\n\nDone! Files saved to: ./test_output/vp_001\n"
+      },
+      "error": "",
+      "classification": "",
+      "trajectory": {
+        "steps": [
+          "python_runtime",
+          "execute_script",
+          "parse_output"
+        ],
+        "tool_calls": [
+          "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3"
+        ],
+        "reasoning_tokens_estimate": 0
+      }
+    }
+  ],
+  "metrics": {
+    "success_rate": 1,
+    "avg_tokens": 35,
+    "p95_latency": 469,
+    "cost_factor": 0.027778,
+    "classification_factor": 1,
+    "cost_usd": 0.00014,
+    "stability_variance": 0,
+    "score": 0.708333
+  },
+  "git_commit": "9b578ac",
+  "model_name": "csv-documentation-generator",
+  "timestamp": "2026-03-24T07:07:26Z",
+  "dataset_version": "v1",
+  "dataset_hash": "406016598f9bd2f42256cbf571eb81243fd7de160d7f8b4f4aaa816e02d3df2b",
+  "run_id": "20260324T070726Z"
+}

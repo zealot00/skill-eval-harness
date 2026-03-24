@@ -1,0 +1,72 @@
+{
+  "success": false,
+  "latency_ms": 725,
+  "token_usage": 70,
+  "output": {
+    "case_count": 2,
+    "skill": "csv-documentation-generator"
+  },
+  "error": "csv-eval-001: exec error: exit status 2, output: usage: generate.py [-h] [--project PROJECT] [--system SYSTEM]\n                   [--category {1,2,3,4,5}] [--bilingual BILINGUAL]\n                   [--language {zh,en}] [--output OUTPUT]\n                   [--format {docx,xlsx,both}] [--doc-id DOC_ID]\n                   [--version VERSION] [--author AUTHOR] [--reviewer REVIEWER]\n                   [--approver APPROVER]\n                   [--critical-functions CRITICAL_FUNCTIONS] [--sync]\n                   [--sync-direction {to-json,to-template,both}]\n                   [--conflict-resolution {newer,template,json,ask}]\n                   [--sync-template-to-db] [--db DB_PATH] [--interactive]\n                   [--auto] [--diff-only] [--verbose]\n                   [--project-root PROJECT_ROOT]\n                   [--template-version TEMPLATE_VERSION]\n                   [--requirements REQUIREMENTS] [--test-results TEST_RESULTS]\n                   [--output-format {text,json}]\n                   {vp,urs,fs,ts,ra,iq,oq,pq,rtm,vsr,checklist,test-case,all,check}\ngenerate.py: error: unrecognized arguments: v1.0\n; csv-happy-001: exec error: exit status 2, output: usage: generate.py [-h] [--project PROJECT] [--system SYSTEM]\n                   [--category {1,2,3,4,5}] [--bilingual BILINGUAL]\n                   [--language {zh,en}] [--output OUTPUT]\n                   [--format {docx,xlsx,both}] [--doc-id DOC_ID]\n                   [--version VERSION] [--author AUTHOR] [--reviewer REVIEWER]\n                   [--approver APPROVER]\n                   [--critical-functions CRITICAL_FUNCTIONS] [--sync]\n                   [--sync-direction {to-json,to-template,both}]\n                   [--conflict-resolution {newer,template,json,ask}]\n                   [--sync-template-to-db] [--db DB_PATH] [--interactive]\n                   [--auto] [--diff-only] [--verbose]\n                   [--project-root PROJECT_ROOT]\n                   [--template-version TEMPLATE_VERSION]\n                   [--requirements REQUIREMENTS] [--test-results TEST_RESULTS]\n                   [--output-format {text,json}]\n                   {vp,urs,fs,ts,ra,iq,oq,pq,rtm,vsr,checklist,test-case,all,check}\ngenerate.py: error: unrecognized arguments: v1.0\n",
+  "results": [
+    {
+      "success": false,
+      "latency_ms": 447,
+      "token_usage": 34,
+      "output": {
+        "stdout": "usage: generate.py [-h] [--project PROJECT] [--system SYSTEM]\n                   [--category {1,2,3,4,5}] [--bilingual BILINGUAL]\n                   [--language {zh,en}] [--output OUTPUT]\n                   [--format {docx,xlsx,both}] [--doc-id DOC_ID]\n                   [--version VERSION] [--author AUTHOR] [--reviewer REVIEWER]\n                   [--approver APPROVER]\n                   [--critical-functions CRITICAL_FUNCTIONS] [--sync]\n                   [--sync-direction {to-json,to-template,both}]\n                   [--conflict-resolution {newer,template,json,ask}]\n                   [--sync-template-to-db] [--db DB_PATH] [--interactive]\n                   [--auto] [--diff-only] [--verbose]\n                   [--project-root PROJECT_ROOT]\n                   [--template-version TEMPLATE_VERSION]\n                   [--requirements REQUIREMENTS] [--test-results TEST_RESULTS]\n                   [--output-format {text,json}]\n                   {vp,urs,fs,ts,ra,iq,oq,pq,rtm,vsr,checklist,test-case,all,check}\ngenerate.py: error: unrecognized arguments: v1.0\n"
+      },
+      "error": "exec error: exit status 2, output: usage: generate.py [-h] [--project PROJECT] [--system SYSTEM]\n                   [--category {1,2,3,4,5}] [--bilingual BILINGUAL]\n                   [--language {zh,en}] [--output OUTPUT]\n                   [--format {docx,xlsx,both}] [--doc-id DOC_ID]\n                   [--version VERSION] [--author AUTHOR] [--reviewer REVIEWER]\n                   [--approver APPROVER]\n                   [--critical-functions CRITICAL_FUNCTIONS] [--sync]\n                   [--sync-direction {to-json,to-template,both}]\n                   [--conflict-resolution {newer,template,json,ask}]\n                   [--sync-template-to-db] [--db DB_PATH] [--interactive]\n                   [--auto] [--diff-only] [--verbose]\n                   [--project-root PROJECT_ROOT]\n                   [--template-version TEMPLATE_VERSION]\n                   [--requirements REQUIREMENTS] [--test-results TEST_RESULTS]\n                   [--output-format {text,json}]\n                   {vp,urs,fs,ts,ra,iq,oq,pq,rtm,vsr,checklist,test-case,all,check}\ngenerate.py: error: unrecognized arguments: v1.0\n",
+      "classification": "semantic_failure",
+      "failure_cluster_id": "cluster-1",
+      "trajectory": {
+        "steps": [
+          "generic_runtime",
+          "execute_command",
+          "parse_output"
+        ],
+        "tool_calls": [
+          "/bin/zsh"
+        ],
+        "reasoning_tokens_estimate": 0
+      }
+    },
+    {
+      "success": false,
+      "latency_ms": 278,
+      "token_usage": 36,
+      "output": {
+        "stdout": "usage: generate.py [-h] [--project PROJECT] [--system SYSTEM]\n                   [--category {1,2,3,4,5}] [--bilingual BILINGUAL]\n                   [--language {zh,en}] [--output OUTPUT]\n                   [--format {docx,xlsx,both}] [--doc-id DOC_ID]\n                   [--version VERSION] [--author AUTHOR] [--reviewer REVIEWER]\n                   [--approver APPROVER]\n                   [--critical-functions CRITICAL_FUNCTIONS] [--sync]\n                   [--sync-direction {to-json,to-template,both}]\n                   [--conflict-resolution {newer,template,json,ask}]\n                   [--sync-template-to-db] [--db DB_PATH] [--interactive]\n                   [--auto] [--diff-only] [--verbose]\n                   [--project-root PROJECT_ROOT]\n                   [--template-version TEMPLATE_VERSION]\n                   [--requirements REQUIREMENTS] [--test-results TEST_RESULTS]\n                   [--output-format {text,json}]\n                   {vp,urs,fs,ts,ra,iq,oq,pq,rtm,vsr,checklist,test-case,all,check}\ngenerate.py: error: unrecognized arguments: v1.0\n"
+      },
+      "error": "exec error: exit status 2, output: usage: generate.py [-h] [--project PROJECT] [--system SYSTEM]\n                   [--category {1,2,3,4,5}] [--bilingual BILINGUAL]\n                   [--language {zh,en}] [--output OUTPUT]\n                   [--format {docx,xlsx,both}] [--doc-id DOC_ID]\n                   [--version VERSION] [--author AUTHOR] [--reviewer REVIEWER]\n                   [--approver APPROVER]\n                   [--critical-functions CRITICAL_FUNCTIONS] [--sync]\n                   [--sync-direction {to-json,to-template,both}]\n                   [--conflict-resolution {newer,template,json,ask}]\n                   [--sync-template-to-db] [--db DB_PATH] [--interactive]\n                   [--auto] [--diff-only] [--verbose]\n                   [--project-root PROJECT_ROOT]\n                   [--template-version TEMPLATE_VERSION]\n                   [--requirements REQUIREMENTS] [--test-results TEST_RESULTS]\n                   [--output-format {text,json}]\n                   {vp,urs,fs,ts,ra,iq,oq,pq,rtm,vsr,checklist,test-case,all,check}\ngenerate.py: error: unrecognized arguments: v1.0\n",
+      "classification": "semantic_failure",
+      "failure_cluster_id": "cluster-1",
+      "trajectory": {
+        "steps": [
+          "generic_runtime",
+          "execute_command",
+          "parse_output"
+        ],
+        "tool_calls": [
+          "/bin/zsh"
+        ],
+        "reasoning_tokens_estimate": 0
+      }
+    }
+  ],
+  "metrics": {
+    "success_rate": 0,
+    "avg_tokens": 35,
+    "p95_latency": 447,
+    "cost_factor": 0.027778,
+    "classification_factor": 0.9,
+    "cost_usd": 0.00014,
+    "stability_variance": 0.043264,
+    "score": 0.188333
+  },
+  "git_commit": "9b578ac",
+  "model_name": "csv-documentation-generator",
+  "timestamp": "2026-03-24T07:31:01Z",
+  "dataset_version": "v1",
+  "dataset_hash": "406016598f9bd2f42256cbf571eb81243fd7de160d7f8b4f4aaa816e02d3df2b",
+  "run_id": "20260324T073101Z"
+}

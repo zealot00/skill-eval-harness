@@ -43,7 +43,7 @@
     "stability_variance": 0,
     "score": 0.85
   },
-  "git_commit": "unknown",
+  "git_commit": "9b578ac",
   "model_name": "demo-skill",
   "timestamp": "1970-01-01T00:00:42Z",
   "dataset_version": "v1",

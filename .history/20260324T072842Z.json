@@ -1,0 +1,70 @@
+{
+  "success": true,
+  "latency_ms": 201,
+  "token_usage": 70,
+  "output": {
+    "case_count": 2,
+    "skill": "csv-documentation-generator"
+  },
+  "error": "",
+  "results": [
+    {
+      "success": true,
+      "latency_ms": 133,
+      "token_usage": 34,
+      "output": {
+        "stdout": ""
+      },
+      "error": "",
+      "classification": "",
+      "trajectory": {
+        "steps": [
+          "generic_runtime",
+          "execute_command",
+          "parse_output"
+        ],
+        "tool_calls": [
+          "/bin/zsh"
+        ],
+        "reasoning_tokens_estimate": 0
+      }
+    },
+    {
+      "success": true,
+      "latency_ms": 68,
+      "token_usage": 36,
+      "output": {
+        "stdout": ""
+      },
+      "error": "",
+      "classification": "",
+      "trajectory": {
+        "steps": [
+          "generic_runtime",
+          "execute_command",
+          "parse_output"
+        ],
+        "tool_calls": [
+          "/bin/zsh"
+        ],
+        "reasoning_tokens_estimate": 0
+      }
+    }
+  ],
+  "metrics": {
+    "success_rate": 1,
+    "avg_tokens": 35,
+    "p95_latency": 133,
+    "cost_factor": 0.027778,
+    "classification_factor": 1,
+    "cost_usd": 0.00014,
+    "stability_variance": 0,
+    "score": 0.708333
+  },
+  "git_commit": "9b578ac",
+  "model_name": "csv-documentation-generator",
+  "timestamp": "2026-03-24T07:28:42Z",
+  "dataset_version": "v1",
+  "dataset_hash": "406016598f9bd2f42256cbf571eb81243fd7de160d7f8b4f4aaa816e02d3df2b",
+  "run_id": "20260324T072842Z"
+}

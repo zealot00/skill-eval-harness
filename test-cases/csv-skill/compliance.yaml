@@ -1,0 +1,162 @@
+case_id: csv-compliance-001
+skill: csv-documentation-generator
+input:
+  doc_type: all
+  project: "LIMS实验室信息管理系统"
+  system: "LIMS v3.0"
+  category: 4
+  bilingual: true
+  language: zh
+  output: "./compliance_output/cat4_lims"
+expected:
+  status: ok
+tags:
+  - compliance
+  - gamp-5
+  - category-4
+  - full-validation
+  - 21-cfr-part-11
+  - eu-annex-11
+
+---
+
+case_id: csv-compliance-002
+skill: csv-documentation-generator
+input:
+  doc_type: urs
+  project: "SCADA监控系统"
+  system: "SCADA v2.1"
+  category: 3
+  bilingual: true
+  language: zh
+  output: "./compliance_output/cat3_scada"
+expected:
+  status: ok
+tags:
+  - compliance
+  - gamp-5
+  - category-3
+  - simplified-validation
+  - risk-based
+
+---
+
+case_id: csv-compliance-003
+skill: csv-documentation-generator
+input:
+  doc_type: urs
+  project: "质量管理系统"
+  system: "QMS v1.5"
+  category: 4
+  bilingual: true
+  language: zh
+  output: "./compliance_output/alcoa_urs"
+expected:
+  status: ok
+tags:
+  - compliance
+  - alcoa-plus
+  - data-integrity
+  - urs
+
+---
+
+case_id: csv-compliance-004
+skill: csv-documentation-generator
+input:
+  doc_type: urs
+  project: "EDC临床数据采集系统"
+  system: "EDC v2.0"
+  category: 4
+  bilingual: true
+  language: zh
+  output: "./compliance_output/21cfr_part11"
+expected:
+  status: ok
+tags:
+  - compliance
+  - 21-cfr-part-11
+  - electronic-records
+  - electronic-signatures
+  - audit-trail
+
+---
+
+case_id: csv-compliance-005
+skill: csv-documentation-generator
+input:
+  doc_type: all
+  project: "MES制造执行系统"
+  system: "MES v4.0"
+  category: 4
+  bilingual: true
+  language: zh
+  output: "./compliance_output/eu_annex11"
+expected:
+  status: ok
+tags:
+  - compliance
+  - eu-annex-11
+  - gmp
+  - validation-lifecycle
+
+---
+
+case_id: csv-compliance-006
+skill: csv-documentation-generator
+input:
+  doc_type: urs
+  project: "双语验证项目"
+  system: "CTMS v2.0"
+  category: 4
+  bilingual: true
+  language: en
+  output: "./compliance_output/bilingual_en"
+expected:
+  status: ok
+tags:
+  - compliance
+  - bilingual
+  - chinese-english
+  - localization
+
+---
+
+case_id: csv-compliance-007
+skill: csv-documentation-generator
+input:
+  doc_type: all
+  project: "追溯验证项目"
+  system: "LIMS v3.0"
+  category: 4
+  bilingual: true
+  language: zh
+  output: "./compliance_output/traceability"
+expected:
+  status: ok
+tags:
+  - compliance
+  - traceability
+  - rtm
+  - requirements-chain
+
+---
+
+case_id: csv-compliance-008
+skill: csv-documentation-generator
+input:
+  doc_type: ra
+  project: "风险评估验证项目"
+  system: "CTMS v2.0"
+  category: 4
+  bilingual: true
+  language: zh
+  output: "./compliance_output/risk_assessment"
+expected:
+  status: ok
+tags:
+  - compliance
+  - risk-assessment
+  - fmea
+  - rpn
+  - gamp-5
