@@ -248,6 +248,12 @@ A: 因为有时候需要有人替打工人说说话。
 
 ---
 
+## 贡献者
+
+- 莱茵生命的白面鸮干员
+
+---
+
 ## English
 
 *For our international friends who skipped the Chinese part above:*
