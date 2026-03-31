@@ -174,17 +174,22 @@ func (c *RuntimeConfig) Validate() error {
 	}
 
 	validTypes := map[string]bool{
-		"python":  true,
-		"node":    true,
-		"go":      true,
-		"shell":   true,
-		"docker":  true,
-		"http":    true,
-		"command": true,
+		"python":     true,
+		"node":       true,
+		"go":         true,
+		"shell":      true,
+		"docker":     true,
+		"http":       true,
+		"command":    true,
+		"typescript": true,
+		"tsx":        true,
+		"bun":        true,
+		"rust":       true,
+		"deno":       true,
 	}
 
 	if !validTypes[c.Runtime.Type] {
-		return fmt.Errorf("runtime.type %q is not supported (valid: python, node, go, shell, docker, http, command)", c.Runtime.Type)
+		return fmt.Errorf("runtime.type %q is not supported (valid: python, node, go, shell, docker, http, command, typescript, tsx, bun, rust, deno)", c.Runtime.Type)
 	}
 
 	if strings.TrimSpace(c.Runtime.Command.Template) == "" {

@@ -69,6 +69,76 @@
 - **只做对比** — 新代码 vs 旧代码，谁好谁坏一目了然
 - **只留记录** — `.history/` 是你的"工作日志"，永远不会被删除（除非你手动清理）
 
+### 多语言运行时支持
+
+SEH 支持多种 AI 生态常用语言：
+
+| 语言 | 类型 | 说明 |
+|------|------|------|
+| Python | `python` | `python3 scripts/generate.py` |
+| Node.js | `node` | `node scripts/main.js` |
+| TypeScript | `typescript` | `ts-node scripts/main.ts` |
+| TSX | `tsx` | `ts-node scripts/main.tsx` |
+| Bun | `bun` | `bun scripts/main.ts` |
+| Deno | `deno` | `deno run --allow-all scripts/main.ts` |
+| Rust | `rust` | `bin/main` (预编译二进制) |
+| Go | `go` | `go run cmd/main.go` |
+| Shell | `shell` | `bash scripts/run.sh` |
+| Docker | `docker` | 容器化执行 |
+| HTTP | `http` | REST API 调用 |
+| Command | `command` | 自定义命令模板 |
+
+### 评估能力
+
+| 能力 | 说明 | 配置文件 |
+|------|------|----------|
+| **Contract First** | JSON Schema 契约验证 | `expected._schema` |
+| **Observable** | 结构化日志和追踪 | 自动记录 |
+| **Deterministic Core** | 确定性字段验证 | `expected._deterministic` |
+| **Execution Isolation** | 进程隔离和清理 | 自动管理 |
+
+#### Contract First 示例
+
+```yaml
+case_id: case-contract
+input:
+  user_id: "123"
+  email: "user@example.com"
+  age: 25
+expected:
+  status: "ok"
+  _schema:
+    required: ["status", "user_id"]
+    properties:
+      status: {type: "string", enum: ["ok", "error"]}
+      user_id: {type: "string", pattern: "^[0-9]+$"}
+      age: {type: "number", minimum: 0, maximum: 150}
+```
+
+支持的验证规则：`type`、`minimum`、`maximum`、`minLength`、`maxLength`、`pattern`、`enum`、`required`
+
+#### Deterministic Core 示例
+
+```yaml
+case_id: case-deterministic
+input:
+  prompt: "same input"
+expected:
+  _deterministic: ["id", "timestamp", "output_hash"]
+  id: "fixed-id-123"
+  timestamp: "2024-01-01T00:00:00Z"
+```
+
+### 测试覆盖率
+
+```
+cmd              77.6%
+internal/dataset 78.2%
+internal/policy  88.9%
+internal/runner  66.6%
+total            69.9%
+```
+
 ---
 
 ## 快速开始

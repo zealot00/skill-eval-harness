@@ -44,18 +44,18 @@ func (g *GenericRuntime) Execute(ctx context.Context, input map[string]any) (Ski
 
 	workDir := g.resolveWorkdir()
 	if err := os.MkdirAll(workDir, 0755); err != nil {
-		return g.errorResult(fmt.Sprintf("create workdir: %w", err), input), nil
+		return g.errorResult(fmt.Sprintf("create workdir: %v", err), input), nil
 	}
 
 	if err := g.prepareInputs(input, workDir); err != nil {
-		return g.errorResult(fmt.Sprintf("prepare inputs: %w", err), input), nil
+		return g.errorResult(fmt.Sprintf("prepare inputs: %v", err), input), nil
 	}
 
 	var result SkillResult
 	var err error
 
 	switch g.config.Runtime.Type {
-	case "python", "node", "go", "shell", "command":
+	case "python", "node", "go", "shell", "command", "typescript", "tsx", "bun", "deno", "rust":
 		result, err = g.executeCommand(ctx, input, workDir)
 	case "docker":
 		result, err = g.executeDocker(ctx, input, workDir)
@@ -137,7 +137,7 @@ func (g *GenericRuntime) resolveInputPath(pathTemplate string, input map[string]
 func (g *GenericRuntime) executeCommand(ctx context.Context, input map[string]any, workDir string) (SkillResult, error) {
 	cmd, err := g.buildCommand(input, workDir)
 	if err != nil {
-		return g.errorResult(fmt.Sprintf("build command: %w", err), input), nil
+		return g.errorResult(fmt.Sprintf("build command: %v", err), input), nil
 	}
 
 	env := g.buildEnv(workDir)
@@ -175,7 +175,9 @@ func (g *GenericRuntime) buildCommand(input map[string]any, workDir string) (*ex
 	template := g.config.Runtime.Command.Template
 
 	script := g.findScript()
+	binary := g.findBinary()
 	template = strings.ReplaceAll(template, "{script}", script)
+	template = strings.ReplaceAll(template, "{binary}", binary)
 	template = strings.ReplaceAll(template, "{args}", g.buildArgs(input))
 
 	shell := os.Getenv("SHELL")
@@ -191,32 +193,39 @@ func (g *GenericRuntime) findScript() string {
 
 	switch cfg.Type {
 	case "python":
-		return g.findMainScript("*.py", "main.py", "generate.py")
+		return g.findMainScript("main.py", "generate.py")
 	case "node":
-		return g.findMainScript("*.js", "main.js", "index.js")
+		return g.findMainScript("main.js", "index.js")
 	case "go":
 		return g.findBinary()
 	case "shell":
-		return g.findMainScript("*.sh", "main.sh", "run.sh")
+		return g.findMainScript("main.sh", "run.sh")
+	case "typescript", "tsx":
+		return g.findMainScript("main.tsx", "main.ts", "index.tsx", "index.ts", "generate.tsx", "generate.ts")
+	case "bun":
+		return g.findMainScript("main.ts", "index.ts", "run.ts")
+	case "deno":
+		return g.findMainScript("main.ts", "mod.ts", "index.ts")
 	}
 
 	return ""
 }
 
-func (g *GenericRuntime) findMainScript(pattern, fallback1, fallback2 string) string {
-	// Check scripts directory for specific named scripts first
+func (g *GenericRuntime) findMainScript(fallbacks ...string) string {
+	if len(fallbacks) == 0 {
+		return ""
+	}
+
 	scriptsDir := filepath.Join(g.skillPath, "scripts")
 
-	// Try fallback names first in scripts directory
-	for _, name := range []string{fallback1, fallback2} {
+	for _, name := range fallbacks {
 		p := filepath.Join(scriptsDir, name)
 		if _, err := os.Stat(p); err == nil {
 			return p
 		}
 	}
 
-	// Fallback: look in root skill directory
-	for _, name := range []string{fallback1, fallback2} {
+	for _, name := range fallbacks {
 		p := filepath.Join(g.skillPath, name)
 		if _, err := os.Stat(p); err == nil {
 			return p
@@ -366,7 +375,7 @@ func (g *GenericRuntime) executeHTTP(ctx context.Context, input map[string]any) 
 
 	req, err := http.NewRequestWithContext(ctx, "POST", endpoint, body)
 	if err != nil {
-		return g.errorResult(fmt.Sprintf("create request: %w", err), input), nil
+		return g.errorResult(fmt.Sprintf("create request: %v", err), input), nil
 	}
 
 	for key, val := range headers {
