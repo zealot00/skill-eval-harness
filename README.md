@@ -234,6 +234,10 @@ A: 看谁在 `PATH` 里。如果 `./seh` 在前面，你就是老板。
 
 A: Phase 0 只有 CLI。Phase 1-3 有 REST API。但说实话，能用 CLI 为什要用 API？
 
+**Q: 什么时候会调用远端 API Server？**
+
+A: 只有同时配置了 `SEH_API_BASE_URL` 和 `SEH_API_TOKEN` 才会走远端；任一缺失就自动降级为本地能力（离线可用）。
+
 **Q: 这 README 为什么要写这些？**
 
 A: 因为有时候需要有人替打工人说说话。

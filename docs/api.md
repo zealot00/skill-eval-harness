@@ -8,7 +8,7 @@
 
 **Phase 判定规则:**
 ```
-if API_KEY 未配置:
+if API_BASE_URL 或 API_TOKEN 任一未配置:
     启用 Phase 0 (Local CLI)
 else:
     启用 Remote capabilities (Phase 1+)
