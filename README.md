@@ -141,6 +141,68 @@ total            69.9%
 
 ---
 
+## 编译与构建
+
+环境要求：
+- Go `1.21.8+`
+- `make`（可选）
+
+方式一：Makefile（推荐）
+
+```bash
+make build
+./seh --help
+```
+
+方式二：直接用 Go
+
+```bash
+go build -o seh .
+./seh --help
+```
+
+将二进制输出到 `bin/`：
+
+```bash
+mkdir -p bin
+go build -o bin/seh .
+./bin/seh --help
+```
+
+安装到 `PATH`（macOS/Linux）：
+
+```bash
+mkdir -p "$HOME/.local/bin"
+go build -o "$HOME/.local/bin/seh" .
+export PATH="$HOME/.local/bin:$PATH"
+seh --help
+```
+
+安装到 `PATH`（Windows PowerShell）：
+
+```powershell
+New-Item -ItemType Directory -Force "$HOME\bin" | Out-Null
+go build -o "$HOME\bin\seh.exe" .
+$currentUserPath = [Environment]::GetEnvironmentVariable("Path", "User")
+if ($currentUserPath -notlike "*$HOME\bin*") {
+  [Environment]::SetEnvironmentVariable("Path", "$currentUserPath;$HOME\bin", "User")
+}
+```
+
+重新打开一个 PowerShell 窗口后验证：
+
+```powershell
+seh --help
+```
+
+如需持久生效，将以下内容写入 `~/.zshrc` 或 `~/.bashrc`：
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+---
+
 ## 快速开始
 
 ```bash
@@ -246,9 +308,9 @@ A: 因为有时候需要有人替打工人说说话。
 
 ## 文档
 
-- [设计架构](/Users/zealot/Code/skill-eval-harness/docs/architecture.md) — 详细设计思路
-- [CLI 说明](/Users/zealot/Code/skill-eval-harness/docs/cli.md) — 全量命令和参数
-- [API 规范](/Users/zealot/Code/skill-eval-harness/docs/api.md) — REST API 定义
+- [设计架构](docs/architecture.md) — 详细设计思路
+- [CLI 说明](docs/cli.md) — 全量命令和参数
+- [API 规范](docs/api.md) — REST API 定义
 
 ---
 
